@@ -1,0 +1,78 @@
+# Xcode
+.DS_Store
+*/xcuserdata
+*.xccheckout
+*.xcworkspace
+!default.xcworkspace
+*.xcuserstate
+*.xcuserdatad
+*.xcscheme
+!default.xcscheme
+xcuserdata/
+build/
+DerivedData/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+
+# Previews
+Previews/
+
+# Build results
+Debug/
+Release/
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Swift Package Manager
+.build/
+Packages/
+Package.resolved
+.swiftpm/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/
+Cartfile.resolved
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+
+# AppCode/CLion
+.idea/
+
+# Bazel
+bazel-*
+
+# Local development environment 
+.localized
+
+# Obj-C/Swift specific
+*.hmap
+
+# Profiling 
+*.gcda
+*.gcno
+
+# Logs and databases 
+*.log*
+logs/
+
+# Backup files 
+*.backup.*
+~build/
+
+# SwiftLint 
+.swiftlint.yml
+
+# Tuist 
+.tuist/
