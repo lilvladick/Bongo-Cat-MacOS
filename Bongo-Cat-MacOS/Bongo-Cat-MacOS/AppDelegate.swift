@@ -3,7 +3,7 @@ import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
     var window: BongoCatWindow!
-    var settingsWindow: NSWindow!
+    var settingsWindow: StatusBarSettings!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let screenFrame = NSScreen.main?.frame ?? .zero
@@ -38,14 +38,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NotificationCenter.default.post(name: .bongoHit, object: nil)
         }
         
-        settingsWindow = NSWindow(
-            contentRect: NSRect(x: 100, y: 100, width: 300, height: 200),
-            styleMask: [.titled, .closable, .miniaturizable, .resizable],
-            backing: .buffered,
-            defer: false
-        )
-        settingsWindow.title = "Settings"
-        settingsWindow.contentView = NSHostingView(rootView: ContentView())
-        settingsWindow.makeKeyAndOrderFront(nil)
+        settingsWindow = StatusBarSettings()
+        settingsWindow.setup()
     }
 }
