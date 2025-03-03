@@ -19,7 +19,7 @@ class StatusBarSettings: NSObject {
         let menu = NSMenu()
         
         let hostingView = NSHostingView(rootView: ContentView())
-        hostingView.frame = NSRect(x: 0, y: 0, width: 100, height: 150)
+        hostingView.frame = NSRect(x: 0, y: 0, width: 200, height: 250)
         
         let menuItem = NSMenuItem()
         menuItem.view = hostingView

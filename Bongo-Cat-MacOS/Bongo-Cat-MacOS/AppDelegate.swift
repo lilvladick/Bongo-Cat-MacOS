@@ -4,6 +4,7 @@ import SwiftUI
 class AppDelegate: NSObject, NSApplicationDelegate {
     var window: BongoCatWindow!
     var settingsWindow: StatusBarSettings!
+    var clickManager = ClickManager()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let screenFrame = NSScreen.main?.frame ?? .zero
@@ -30,12 +31,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         let contentView = NSHostingView(rootView: BongoCatView())
         contentView.frame = NSRect(origin: .zero, size: catSize)
-        
+
         window.contentView = contentView
         window.makeKeyAndOrderFront(nil)
         
         NSEvent.addGlobalMonitorForEvents(matching: [.keyDown, .leftMouseDown]) { _ in
             NotificationCenter.default.post(name: .bongoHit, object: nil)
+            self.clickManager.increment()
         }
         
         settingsWindow = StatusBarSettings()
